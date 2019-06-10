@@ -11,12 +11,7 @@
 typedef struct s_list
 {
 	int		len;
-<<<<<<< HEAD
 	int		*str;
-=======
-	char	*str;
-	struct	s_list *next;
->>>>>>> refs/remotes/origin/master
 }	t_list;
 
 int		ft_atoi_err(char *str, int *err);
@@ -27,7 +22,6 @@ void	ft_bzero(char *str, int len);
 void	check_sort(t_list a, t_list b);
 int     check_av(int ac, char **av, int *err);
 char	*ft_read(void);
-<<<<<<< HEAD
 
 void    ft_sa(t_list *a);
 void    ft_sb(t_list *b);
@@ -41,10 +35,6 @@ void 	ft_rra(t_list *a);
 void 	ft_rrb(t_list *b);
 void 	ft_rrr(t_list *a, t_list *b);
 
-=======
-int		ft_strlen(char *str);
-void	ft_bzero(char *str, int len);
->>>>>>> refs/remotes/origin/master
 // t_list	*gnl(void);
 
 #endif
