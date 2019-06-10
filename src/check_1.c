@@ -6,13 +6,13 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 13:24:47 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/10 15:08:40 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/10 18:00:58 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/checker.h"
 
-void    ft_sa(t_list *a)
+void	ft_sa(t_list *a)
 {
 	int		tmp;
 

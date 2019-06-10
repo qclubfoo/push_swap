@@ -15,14 +15,19 @@ typedef struct s_list
 }	t_list;
 
 int		ft_atoi_err(char *str, int *err);
-int		ft_atoi(char *str);
+int		ft_strncpy(char *dst, char *src, int i);
 int		ft_strlen(char *str);
 void	ft_bzero(char *str, int len);
+int		ft_atoi(char *str);
 
 void	check_sort(t_list a, t_list b);
 int     check_av(int ac, char **av, int *err);
 char	*ft_read(void);
 
+
+int		check_s(char *str_r, char *str, int i, int j);
+int		check_p(char *str_r, char *str, int i, int j);
+int		check_r(char *str_r, char *str, int i, int j);
 void    ft_sa(t_list *a);
 void    ft_sb(t_list *b);
 void    ft_ss(t_list *a, t_list *b);
