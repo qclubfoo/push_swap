@@ -6,7 +6,11 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 17:35:44 by qclubfoo          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/06/10 16:21:32 by qclubfoo         ###   ########.fr       */
+=======
+/*   Updated: 2019/06/07 12:01:12 by qclubfoo         ###   ########.fr       */
+>>>>>>> refs/remotes/origin/master
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +74,7 @@ int		ft_atoi(char *str)
 
 int		ft_err(int **stack)
 {
+	write(2, "Error\n", 6);
 	free(*stack);
 	*stack = NULL;
 	return (1);

@@ -6,7 +6,11 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 17:26:13 by qclubfoo          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/06/10 16:47:46 by qclubfoo         ###   ########.fr       */
+=======
+/*   Updated: 2019/06/08 23:51:20 by qclubfoo         ###   ########.fr       */
+>>>>>>> refs/remotes/origin/master
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +130,11 @@ char	*check_param(void)
 	str_r = ft_read();
 	if (str_r == NULL)
 	{
+<<<<<<< HEAD
 		write(2, "Error\n", 6);
+=======
+		write(1, "ERR\n", 4);
+>>>>>>> refs/remotes/origin/master
 		exit (0);
 	}
 	if(!(str = (char*)malloc(sizeof(char) * ft_strlen(str_r))))
@@ -154,6 +162,7 @@ char	*check_param(void)
 	}
 	return (str);
 }
+<<<<<<< HEAD
 
 void		ft_checker(int ac, char **av, char *str)
 {	
@@ -206,25 +215,63 @@ void		ft_checker(int ac, char **av, char *str)
 int	main(int ac, char **av)
 {
 	char	*str;
+=======
+int	main(int ac, char **av)
+{
+	int		*a;
+	int		*b;
+	char	*str;
+	t_list	*param;
+>>>>>>> refs/remotes/origin/master
 	int		err;
 
 	if (ac == 1)
 		return (0);
 	err = 0;
+<<<<<<< HEAD
 	if (check_av(ac, av, &err))
 	{
 		write(2, "Error\n", 6);
 		exit (0);
+=======
+	a = (int*)malloc(sizeof(int) * (ac - 1));
+	b = (int*)malloc(sizeof(int) * (ac - 1));
+	if (check_av(ac, av, &err))
+	{
+		free(a);
+		free(b);
+		write(2, "ERR\n", 4);
+		return (0);
+>>>>>>> refs/remotes/origin/master
 	}
 	str = check_param();
 	if (str == NULL)
 	{
 		free(str);
+<<<<<<< HEAD
 		write(2, "Error\n", 6);
 		exit (0);
 	}
 	ft_checker(ac, av, str);
 	exit (0);
+=======
+		free(a);
+		free(b);
+		write(2, "ERR\n", 4);
+		return (0);
+	}
+	printf("%s\n", str);
+	// write(1, "OK\n", 3);
+
+	// i = ac - 2;
+	// while (i >= 0)
+	// {
+	// 	a[i] = ft_atoi(av[ac-1], &err);
+	// 	i--;
+	// 	ac--;
+	// }
+	return (0);
+>>>>>>> refs/remotes/origin/master
 }
 
 
