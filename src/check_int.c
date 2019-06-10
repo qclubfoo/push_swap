@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 17:35:44 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/05 19:06:47 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/07 12:01:12 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int		ft_atoi(char *str)
 
 int		ft_err(int **stack)
 {
+	write(2, "Error\n", 6);
 	free(*stack);
 	*stack = NULL;
 	return (1);
@@ -113,6 +114,6 @@ int check_av(int ac, char **av, int *err)
 	if (*err != 0)
 		return (ft_err(&stack));
 	free(stack);
-	write(1, "Ok\n", 3);
+	stack = NULL;
 	return (0);
 }
