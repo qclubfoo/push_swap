@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 17:26:13 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/10 19:30:08 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/11 17:17:27 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,15 @@ static void	make_str(char *str, char *str_r)
 			i += check_r(str_r, str, i, j);
 		if (ii == i)
 		{
-			free(str);
-			str = NULL;
-			break ;
+			write(2, "Error\n", 6);
+			exit(0);
 		}
 		else
 			j++;
 	}
 }
 
-char		*check_param(void)
+char		*check_param(t_list a, t_list b)
 {
 	char	*str_r;
 	char	*str;
@@ -48,7 +47,7 @@ char		*check_param(void)
 	str_r = ft_read();
 	if (str_r == NULL)
 	{
-		write(2, "Error\n", 6);
+		check_sort(a, b);
 		exit(0);
 	}
 	if (!(str = (char*)malloc(sizeof(char) * ft_strlen(str_r))))
@@ -84,36 +83,31 @@ void		ft_sort(char *str, t_list *a, t_list *b)
 		ft_rrr(a, b);
 }
 
-void		ft_checker(int ac, char **av, char *str)
+void		ft_make_ab(int ac, char **av, t_list *a, t_list *b)
 {
-	t_list	a;
-	t_list	b;
 	int		i;
 
 	i = 0;
-	if (!(a.str = (int*)malloc(sizeof(int) * (ac - 1))))
+	if (!(a->str = (int*)malloc(sizeof(int) * (ac - 1))))
 		exit(0);
 	while (i < ac - 1)
 	{
-		a.str[i] = ft_atoi(av[i + 1]);
+		a->str[i] = ft_atoi(av[i + 1]);
 		i++;
 	}
-	a.len = ac - 1;
+	a->len = ac - 1;
 	i = 0;
-	if (!(b.str = (int*)malloc(sizeof(int) * (ac - 1))))
+	if (!(b->str = (int*)malloc(sizeof(int) * (ac - 1))))
 		exit(0);
-	b.len = 0;
-	while (*str)
-		ft_sort(str++, &a, &b);
-	check_sort(a, b);
-	free(a.str);
-	free(b.str);
+	b->len = 0;
 }
 
 int			main(int ac, char **av)
 {
 	char	*str;
 	int		err;
+	t_list	a;
+	t_list	b;
 
 	if (ac == 1)
 		return (0);
@@ -123,13 +117,8 @@ int			main(int ac, char **av)
 		write(2, "Error\n", 6);
 		exit(0);
 	}
-	str = check_param();
-	if (str == NULL)
-	{
-		free(str);
-		write(2, "Error\n", 6);
-		exit(0);
-	}
-	ft_checker(ac, av, str);
+	ft_make_ab(ac, av, &a, &b);
+	str = check_param(a, b);
+	ft_checker(str, &a, &b);
 	exit(0);
 }
