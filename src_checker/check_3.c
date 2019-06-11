@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 15:30:03 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/10 18:13:49 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/11 17:17:14 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,11 @@ void	check_sort(t_list a, t_list b)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
+}
+
+void	ft_checker(char *str, t_list *a, t_list *b)
+{
+	while (*str)
+		ft_sort(str++, a, b);
+	check_sort(*a, *b);
 }

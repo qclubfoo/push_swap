@@ -24,7 +24,8 @@ void	check_sort(t_list a, t_list b);
 int     check_av(int ac, char **av, int *err);
 char	*ft_read(void);
 
-
+void	ft_sort(char *str, t_list *a, t_list *b);
+void	ft_checker(char *str, t_list *a, t_list *b);
 int		check_s(char *str_r, char *str, int i, int j);
 int		check_p(char *str_r, char *str, int i, int j);
 int		check_r(char *str_r, char *str, int i, int j);
@@ -39,7 +40,5 @@ void    ft_rr(t_list *a, t_list *b);
 void 	ft_rra(t_list *a);
 void 	ft_rrb(t_list *b);
 void 	ft_rrr(t_list *a, t_list *b);
-
-// t_list	*gnl(void);
 
 #endif
