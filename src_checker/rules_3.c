@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_3.c                                          :+:      :+:    :+:   */
+/*   rules_3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 15:30:03 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/11 17:17:14 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/13 17:48:10 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,34 +60,4 @@ void	ft_rrr(t_list *a, t_list *b)
 {
 	ft_rra(a);
 	ft_rrb(b);
-}
-
-void	check_sort(t_list a, t_list b)
-{
-	int		i;
-	int		err;
-
-	err = b.len;
-	i = 0;
-	while (i < a.len - 1 && a.len > 2)
-	{
-		if (a.str[i] < a.str[i + 1])
-			i++;
-		else
-		{
-			err = -1;
-			break ;
-		}
-	}
-	if (err == 0)
-		write(1, "OK\n", 3);
-	else
-		write(1, "KO\n", 3);
-}
-
-void	ft_checker(char *str, t_list *a, t_list *b)
-{
-	while (*str)
-		ft_sort(str++, a, b);
-	check_sort(*a, *b);
 }

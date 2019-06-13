@@ -6,38 +6,61 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 17:35:44 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/10 19:32:53 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/13 18:00:25 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/checker.h"
 
-int		ft_atoi_err(char *str, int *err)
+int		check_av_new(t_list *a, char **av, int *err)
 {
-	unsigned long int	res;
-	int					sign;
+	int		i;
+	char	**str;
+	int		arg_count;
 
-	sign = 1;
-	res = 0;
-	while (*str == ' ' || *str == '\n' || *str == '\t' ||
-			*str == '\f' || *str == '\r' || *str == '\v')
-		str++;
-	*str == '-' ? sign = -1 : 0;
-	*str == '+' || *str == '-' ? str++ : 0;
-	while ('0' <= *str && *str <= '9')
+	str = ft_str_split(av[1], ' ');
+	arg_count = 0;
+	while (str[arg_count] != NULL)
+		arg_count++;
+	if (!(a->str = (int*)malloc(sizeof(int) * (arg_count))))
+		exit(0);
+	a->len = arg_count;
+	i = 0;
+	while (i < arg_count)
 	{
-		if ((res > MAX_I) || ((res == MAX_I && (*str - '0') > 7) && sign == 1)
-		|| (res > MAX_I) || ((res == MAX_I && (*str - '0') > 8) && sign == -1))
-		{
-			*err = 1;
-			return (-1);
-		}
-		res = 10 * res + (int)(*str - '0');
-		str++;
+		if (*err != 0)
+			break ;
+		a->str[i] = ft_atoi_err(str[i], err);
+		if (i > 0)
+			check_repeat(a->str, i, err);
+		i++;
 	}
-	if ((*str > 32 && *str < 48) || (*str > 57 && *str < 127))
-		*err = 1;
-	return ((int)(sign * res));
+	ft_free(str);
+	if (*err != 0)
+		return (ft_err(&a->str));
+	return (0);
+}
+
+int		check_av(t_list *a, int ac, char **av, int *err)
+{
+	int	i;
+
+	if (!(a->str = (int*)malloc(sizeof(int) * (--ac))))
+		exit(0);
+	a->len = ac;
+	i = 0;
+	while (i < ac)
+	{
+		if (*err != 0)
+			break ;
+		a->str[i] = ft_atoi_err(av[i + 1], err);
+		if (i > 0)
+			check_repeat(a->str, i, err);
+		i++;
+	}
+	if (*err != 0)
+		return (ft_err(&a->str));
+	return (0);
 }
 
 void	check_repeat(int *stack, int i, int *err)
@@ -63,27 +86,19 @@ int		ft_err(int **stack)
 	return (1);
 }
 
-int		check_av(int ac, char **av, int *err)
+void	ft_free(char **str)
 {
-	int	*stack;
-	int	i;
+	int		i;
 
-	stack = (int*)malloc(sizeof(int) * (ac - 1));
 	i = 0;
-	ac--;
-	while (ac > 0)
+	while (str[i] != NULL)
 	{
-		if (*err != 0)
-			break ;
-		stack[i] = ft_atoi_err(av[ac], err);
-		if (i > 0)
-			check_repeat(stack, i, err);
+		free(str[i]);
+		str[i] = NULL;
 		i++;
-		ac--;
 	}
-	if (*err != 0)
-		return (ft_err(&stack));
-	free(stack);
-	stack = NULL;
-	return (0);
+	free(str[i]);
+	str[i] = NULL;
+	free(str);
+	str = NULL;
 }
