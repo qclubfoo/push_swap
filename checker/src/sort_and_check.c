@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 17:33:50 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/13 18:01:09 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/14 22:29:36 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	check_sort(t_list a, t_list b)
 
 	err = b.len;
 	i = 0;
-	while (i < a.len - 1 && a.len > 2)
+	while (i < a.len - 1 && a.len >= 2)
 	{
 		if (a.str[i] < a.str[i + 1])
 			i++;

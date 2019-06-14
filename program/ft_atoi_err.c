@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   std_func.c                                         :+:      :+:    :+:   */
+/*   ft_atoi_err.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 18:18:08 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/11 12:59:15 by qclubfoo         ###   ########.fr       */
+/*   Created: 2019/06/13 16:32:41 by qclubfoo          #+#    #+#             */
+/*   Updated: 2019/06/14 22:23:50 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc_program/program.h"
+#include "./inc/push_swap.h"
 
-void	ft_bzero(char *str, int len)
-{
-	int	i;
-
-	if (len < 0)
-		return ;
-	i = 0;
-	while (i <= len)
-		str[i++] = '\0';
-}
-
-int		ft_atoi(char *str)
+int		ft_atoi_err(char *str, int *err)
 {
 	unsigned long int	res;
 	int					sign;
@@ -33,20 +22,20 @@ int		ft_atoi(char *str)
 	while (*str == ' ' || *str == '\n' || *str == '\t' ||
 			*str == '\f' || *str == '\r' || *str == '\v')
 		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '+' || *str == '-')
-		str++;
+	*str == '-' ? sign = -1 : 0;
+	*str == '+' || *str == '-' ? str++ : 0;
 	while ('0' <= *str && *str <= '9')
 	{
-		if ((res > MAX_I || (res == MAX_I && (*str - '0') > 7)) &&
-				sign == 1)
+		if ((res > MAX_I) || ((res == MAX_I && (*str - '0') > 7) && sign == 1)
+		|| (res > MAX_I) || ((res == MAX_I && (*str - '0') > 8) && sign == -1))
+		{
+			*err = 1;
 			return (-1);
-		else if ((res > MAX_I || (res == MAX_I && (*str - '0') > 8)) &&
-				sign == -1)
-			return (0);
+		}
 		res = 10 * res + (int)(*str - '0');
 		str++;
 	}
+	if ((*str > 32 && *str < 48) || (*str > 57 && *str < 127))
+		*err = 1;
 	return ((int)(sign * res));
 }
