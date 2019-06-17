@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 13:24:47 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/15 13:35:15 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/17 16:13:35 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_sa(t_list *a)
 		a->str[0] = a->str[1];
 		a->str[1] = tmp;
 	}
+	write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_list *b)
@@ -34,6 +35,7 @@ void	ft_sb(t_list *b)
 		b->str[0] = b->str[1];
 		b->str[1] = tmp;
 	}
+	write(1, "sb\n", 3);
 }
 
 void	ft_ss(t_list *a, t_list *b)

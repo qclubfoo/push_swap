@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 15:09:57 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/15 15:32:48 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/17 16:12:34 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,6 @@ void	ft_ra(t_list *a)
 
 	if (a->len == 0 || a->len == 1)
 		return ;
-	else if (a->len == 2)
-	{
-		ft_sa(a);
-		write(1, "ra\n", 3);
-		return ;
-	}
 	i = 0;
 	tmp = a->str[i];
 	while (i < a->len - 1)
@@ -43,13 +37,6 @@ void	ft_rb(t_list *b)
 
 	if (b->len == 0 || b->len == 1)
 		return ;
-	else if (b->len == 2)
-	{
-		ft_sb(b);
-		write(1, "rb\n", 3);
-		return ;
-	}
-	i = 0;
 	tmp = b->str[i];
 	while (i < b->len - 1)
 	{
