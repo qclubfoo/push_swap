@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 13:24:47 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/14 22:39:39 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/15 13:35:15 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	ft_pa(t_list *a, t_list *b)
 	}
 	else
 		b->str[0] = 0;
+	write(1, "pa\n", 3);
 }
 
 void	ft_pb(t_list *a, t_list *b)
@@ -96,4 +97,5 @@ void	ft_pb(t_list *a, t_list *b)
 	}
 	else
 		a->str[0] = 0;
+	write(1, "pb\n", 3);
 }

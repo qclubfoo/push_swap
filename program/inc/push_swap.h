@@ -22,8 +22,9 @@ void	check_repeat(int *stack, int i, int *err);
 void	ft_free(char **str);
 int		ft_err(int **stack);
 
-
+void	last_sort(t_list *a, int count);
 int		check_sort(t_list a, t_list b);
+void	ft_sort(t_list *a, t_list *b);
 void    ft_sa(t_list *a);
 void    ft_sb(t_list *b);
 void    ft_ss(t_list *a, t_list *b);
