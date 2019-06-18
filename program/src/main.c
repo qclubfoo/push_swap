@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 15:01:49 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/18 00:03:55 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/18 17:12:12 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int		main(int ac, char **av)
 {
 	t_list	a;
 	t_list	b;
-	char	*str;
 	int		err;
 
 	err = 0;
@@ -35,10 +34,9 @@ int		main(int ac, char **av)
 		exit(0);
 	}
 	ft_sort(&a, &b);
-	int i = 0;
-	while (i < a.len)
-		printf("%d ", a.str[i++]);
-	printf("\n");
+	free(a.str);
+	free(b.str);
+	exit(0);
 }
 
 void	ft_error_msg(void)

@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 15:09:57 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/17 16:12:34 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/18 15:11:28 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ft_rb(t_list *b)
 
 	if (b->len == 0 || b->len == 1)
 		return ;
+	i = 0;
 	tmp = b->str[i];
 	while (i < b->len - 1)
 	{
