@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 15:01:49 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/18 17:12:12 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/19 01:11:29 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,17 @@ int		main(int ac, char **av)
 		exit(0);
 	}
 	ft_sort(&a, &b);
-	free(a.str);
-	free(b.str);
-	exit(0);
+	// int j = 0;
+	// while (j < a.len)
+	// 	printf("%d ", a.str[j++]);
+	// printf("\n");
+	// j = 0;
+	// while (j < b.len)
+	// 	printf("%d ", b.str[j++]);
+	// printf("\n");
+	// free(a.str);
+	// free(b.str);
+	// exit(0);
 }
 
 void	ft_error_msg(void)

@@ -4,6 +4,7 @@
 # define MAX_I 214748364
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 typedef struct s_list
 {
