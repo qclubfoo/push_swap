@@ -13,6 +13,14 @@ typedef struct s_list
 	int		*str;
 }	t_list;
 
+typedef struct s_listt
+{
+	int		ud_a;
+	int		ud_b;
+	int		total;
+	int		num;
+}	t_min;
+
 int		ft_atoi_err(char *str, int *err);
 char	**ft_str_split(char *str, char del);
 
