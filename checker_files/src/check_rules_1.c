@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 17:30:24 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/13 18:05:04 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/19 16:28:19 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ void		make_str(char *str, char *str_r)
 		if (ii == i)
 		{
 			ft_free_strs(&str, &str_r);
-			break ;
+			ft_error_msg();
+			exit(0);
 		}
 		else
 			j++;

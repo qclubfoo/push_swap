@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 17:35:44 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/15 19:35:40 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/19 15:56:51 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		check_av_new(t_list *a, char **av, int *err)
 	char	**str;
 	int		arg_count;
 
-	str = ft_str_split(av[1], ',');
+	str = ft_str_split(av[1], ' ');
 	arg_count = 0;
 	while (str[arg_count] != NULL)
 		arg_count++;
