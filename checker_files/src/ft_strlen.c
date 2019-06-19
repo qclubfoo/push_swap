@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/13 17:15:11 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/13 17:16:01 by qclubfoo         ###   ########.fr       */
+/*   Created: 2019/06/13 17:17:02 by qclubfoo          #+#    #+#             */
+/*   Updated: 2019/06/19 13:28:15 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/checker.h"
+#include "../inc/checker.h"
 
-void	ft_bzero(char *str, int len)
+int		ft_strlen(char *str)
 {
-	int	i;
+	int		i;
 
-	if (len < 0)
-		return ;
+	if (str == NULL)
+		return (-1);
 	i = 0;
-	while (i <= len)
-		str[i++] = '\0';
+	while (str[i])
+		i++;
+	return (i);
 }

@@ -6,11 +6,11 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 16:32:41 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/18 19:21:53 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/19 13:28:06 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "../inc/checker.h"
 
 int		ft_atoi_err(char *str, int *err)
 {

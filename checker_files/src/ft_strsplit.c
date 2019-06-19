@@ -6,11 +6,11 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 15:17:15 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/14 22:23:35 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/19 13:28:23 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/push_swap.h"
+#include "../inc/checker.h"
 
 static void	ft_count_words(char *str, char del, int *words)
 {

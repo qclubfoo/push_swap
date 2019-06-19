@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/13 17:17:02 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/13 17:17:25 by qclubfoo         ###   ########.fr       */
+/*   Created: 2019/06/10 18:18:08 by qclubfoo          #+#    #+#             */
+/*   Updated: 2019/06/19 13:28:18 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./inc/checker.h"
+#include "../inc/checker.h"
 
-int		ft_strlen(char *str)
+int		ft_strncpy(char *dst, char *src, int i)
 {
-	int		i;
+	int	j;
 
-	if (str == NULL)
-		return (-1);
-	i = 0;
-	while (str[i])
-		i++;
+	j = 0;
+	while (src[j])
+		dst[i++] = src[j++];
+	dst[i] = '\0';
 	return (i);
 }
