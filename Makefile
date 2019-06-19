@@ -29,6 +29,17 @@ $(NAME_2) :
 	$(CC) $(FLAGS) -c $(SRC_CHECKER)
 	$(CC) $(FLAGS) $(OBJ_CHECKER) -o $(NAME_2)
 
+%.o: program/src/%.c
+	@$(CC) $(FLAGS) -I $(INC) -o $@ -c $<
+
+%.o: checker_files/src/%.c
+	@$(CC) $(FLAGS) -I $(INC) -o $@ -c $<
+
+%.o: program/%.c
+	@$(CC) $(FLAGS) -I $(INC) -o $@ -c $<
+
+%.o: checker_files/src/%.c
+	@$(CC) $(FLAGS) -I $(INC) -o $@ -c $<
 
 all : $(NAME_1)
 

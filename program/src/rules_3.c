@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 15:30:03 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/19 00:36:05 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/19 10:57:29 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	ft_rrr(t_list *a, t_list *b)
 		i--;
 	}
 	a->str[0] = tmp;
-
 	if (b->len == 0 || b->len == 1)
 		return ;
 	i = b->len - 2;
@@ -75,7 +74,4 @@ void	ft_rrr(t_list *a, t_list *b)
 	}
 	b->str[0] = tmp;
 	write(1, "rrr\n", 4);
-	// ft_rra(a);
-	// ft_rrb(b);
-
 }

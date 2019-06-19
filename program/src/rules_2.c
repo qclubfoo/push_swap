@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 15:09:57 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/19 00:37:01 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/19 10:56:51 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,4 @@ void	ft_rr(t_list *a, t_list *b)
 	}
 	b->str[b->len - 1] = tmp;
 	write(1, "rr\n", 3);
-
-	// ft_ra(a);
-	// ft_rb(b);
 }

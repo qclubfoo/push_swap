@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 15:01:49 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/13 18:10:53 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/19 11:21:19 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		main(int ac, char **av)
 	ft_sort_check(str, &a, &b);
 	free(a.str);
 	free(b.str);
+	free(str);
 	exit(0);
 }
 
