@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 10:03:18 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/19 10:44:26 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/20 18:03:50 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		ft_sort(t_list *a, t_list *b)
 		ft_check_best_pos(a, b, &min, i);
 		ft_sort_param(a, b, min);
 	}
-	ft_final_sort(a, ft_find_min(*a));
+	ft_final_sort(a, b, ft_find_min(*a));
 }
 
 void		ft_sort_up_both(t_list *a, t_list *b, t_min min)
@@ -45,16 +45,19 @@ void		ft_sort_up_both(t_list *a, t_list *b, t_min min)
 	while (ud_b + i < 0 && ud_a + i < 0)
 	{
 		ft_rrr(a, b);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
 		i++;
 	}
 	while (ud_b + i < 0)
 	{
 		ft_rrb(b);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
 		i++;
 	}
 	while (ud_a + i < 0)
 	{
 		ft_rra(a);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
 		i++;
 	}
 }
@@ -71,16 +74,19 @@ void		ft_sort_down_both(t_list *a, t_list *b, t_min min)
 	while (ud_b - i > 0 && ud_a - i > 0)
 	{
 		ft_rr(a, b);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
 		i++;
 	}
 	while (ud_b - i > 0)
 	{
 		ft_rb(b);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
 		i++;
 	}
 	while (ud_a - i > 0)
 	{
 		ft_ra(a);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
 		i++;
 	}
 }
@@ -99,20 +105,12 @@ void		ft_sort_param(t_list *a, t_list *b, t_min min)
 	else if (ud_b > 0 && ud_a > 0)
 		ft_sort_down_both(a, b, min);
 	else
-	{
-		while (ud_b++ < 0)
-			ft_rrb(b);
-		while (min.ud_b-- > 0)
-			ft_rb(b);
-		while (ud_a++ < 0)
-			ft_rra(a);
-		while (min.ud_a-- > 0)
-			ft_ra(a);
-	}
+		print_param(a, b, min);
 	ft_pa(a, b);
+	a->debug == 1 ? ft_debug(*a, *b) : 0;
 }
 
-void		ft_final_sort(t_list *a, int min)
+void		ft_final_sort(t_list *a, t_list *b, int min)
 {
 	int	i;
 
@@ -120,11 +118,13 @@ void		ft_final_sort(t_list *a, int min)
 	while (i > 0)
 	{
 		ft_ra(a);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
 		i--;
 	}
 	while (i < 0)
 	{
 		ft_rra(a);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
 		i++;
 	}
 }

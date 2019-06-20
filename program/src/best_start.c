@@ -6,7 +6,7 @@
 /*   By: qclubfoo <qclubfoo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 10:40:49 by qclubfoo          #+#    #+#             */
-/*   Updated: 2019/06/19 10:55:19 by qclubfoo         ###   ########.fr       */
+/*   Updated: 2019/06/20 18:08:16 by qclubfoo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,16 @@ t_max_len	ft_max_len(t_list a)
 	return (max);
 }
 
+void		make_best_start_next(t_list *a, t_list *b, t_max_len max)
+{
+	while (a->len > 3)
+	{
+		ft_pb(a, b);
+		a->debug == 1 ? ft_debug(*a, *b) : 0;
+	}
+	sort_three(a, b);
+}
+
 void		make_best_start(t_list *a, t_list *b, t_max_len max)
 {
 	int i;
@@ -59,33 +69,23 @@ void		make_best_start(t_list *a, t_list *b, t_max_len max)
 	{
 		i = 0;
 		while (i++ != max.index)
+		{
 			ft_pb(a, b);
+			a->debug == 1 ? ft_debug(*a, *b) : 0;
+		}
 		while (i++ <= max.length + max.index)
+		{
 			ft_ra(a);
+			a->debug == 1 ? ft_debug(*a, *b) : 0;
+		}
 		while (a->len > max.length)
+		{
 			ft_pb(a, b);
+			a->debug == 1 ? ft_debug(*a, *b) : 0;
+		}
 	}
 	else
-	{
-		while (a->len > 3)
-			ft_pb(a, b);
-		sort_three(a);
-	}
-}
-
-void		sort_three(t_list *a)
-{
-	int	max;
-	int	min;
-
-	max = ft_find_max(*a);
-	min = ft_find_min(*a);
-	if (a->str[0] == max)
-		ft_ra(a);
-	else if (a->str[1] == max)
-		ft_rra(a);
-	if (a->str[1] == min)
-		ft_sa(a);
+		make_best_start_next(a, b, max);
 }
 
 void		ft_check_best_pos(t_list *a, t_list *b, t_min *min, int i)

@@ -4,7 +4,7 @@ NAME_2 = checker
 
 SRC_PUSH_SWAP = program/src/ft_atoi_err.c program/src/ft_strsplit.c program/src/best_start.c program/src/check_int.c \
 program/src/find_pos_func.c program/src/main.c program/src/rules_1.c program/src/rules_2.c program/src/rules_3.c \
-program/src/sort_2.c program/src/sort_checking.c
+program/src/sort_2.c program/src/sort_checking.c program/src/ft_strcmp.c program/src/debug_func.c
 
 OBJ_PUSH_SWAP = $(SRC_PUSH_SWAP:.c=.o)
 
